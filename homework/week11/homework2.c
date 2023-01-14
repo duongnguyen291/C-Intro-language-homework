@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 #define size 40
 int status[size], powerComsumption[size];
 void reset(int status[], int powerComsumption[]);
