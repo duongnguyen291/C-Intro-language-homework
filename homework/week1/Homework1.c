@@ -15,5 +15,6 @@ int main(){
     d = (c-b)/a;
     printf("\nThe result is: %f ",d);
    //hehe
+   //test thu tiep
 }
 
