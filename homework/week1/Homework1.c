@@ -14,6 +14,6 @@ int main(){
     float d;
     d = (c-b)/a;
     printf("\nThe result is: %f ",d);
-   
+   //hehe
 }
 
