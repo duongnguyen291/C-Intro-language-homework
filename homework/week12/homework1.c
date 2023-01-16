@@ -6,10 +6,13 @@ void reset(int a[row_size][column_size]);
 void getpositive(int *n);
 void get_by_range(int *n, int a, int b);
 void print_status(int a[row_size][column_size]);
+void turn_row(int a[row_size][column_size]);
+void lietke(int a[row_size][column_size]);
 int main(){
     //intialization variables 
     int a[row_size][column_size];
     int home;
+    int n;
     //reset all the elements of array
     for(int i = 0;i < row_size;i++){
         for(int j = 0;j < column_size ;j++){
@@ -33,25 +36,35 @@ int main(){
     switch (home)
     {
     case 0:
-        printf("\n---------------------------");
+        printf("\n-------------------------------------------------");
             for(int i = 0; i < row_size;i++){
                 printf("\n");
                 for(int j = 0; j < column_size;j++){
-                    printf("| %5d |", a[i][j]);
+                    if(a[i][j] == 1){
+                        printf("|\tON\t|");
+                    }
+                    //a[i][j]== 1 ? printf("|\tON\t|") : printf("|\tOFF\t|");
+                    else if(a[i][j] == 0){
+                        printf("|\tOFF\t|");
+                    }
                 }
-                printf("\n---------------------------");
+                printf("\n-------------------------------------------------");
             }
         break;
     case 1:
+        turn_row(&a[row_size][column_size]);
+        //lietke(a[row_size][column_size]);       
         break;
     case 2:
+        turn_column(&a[row_size][column_size]);
+        //lietke(a[row_size][column_size]);
         break;
     case 3:
         break;
     case 4:
         break;
     case 5:
-        reset(&a[row_size][column_size]);
+        reset(a[row_size][column_size]);
         break;
     case 6:
         printf("\nThanks for using our service !");
@@ -68,6 +81,14 @@ int main(){
 }
 
 
+void lietke(int a[row_size][column_size]){
+    for(int i = 0;i < row_size;i++){
+        for(int j = 0;j < column_size ;j++){
+           printf("%5d",a[i][j]);
+        }
+        printf("\n");
+    }
+}
 
 void reset(int a[row_size][column_size]){   
 for(int i = 0;i < row_size;i++){
@@ -91,8 +112,22 @@ void get_by_range(int *n, int a, int b){
             scanf("%d", &*n);
             if((*n < a)||(*n > b)){
                 printf("\nThe answer is incorrect!Please enter again!");
-                printf("%d",n);
             }
         }while((*n<a)||(*n>b));
 }
-
+void turn_row(int a[row_size][column_size]){
+    int n;
+    printf("\nChoose the number of row: ");
+    scanf("%d",&n);
+    for(int i = 0; i < column_size;i++){
+        a[n-1][i] = 1;
+    }
+}
+void turn_column(int a[row_size][column_size]){
+    int n;
+    printf("\nChoose the number of column: ");
+    scanf("%d",&n);
+    for(int i = 0; i < row_size;i++){
+        a[i][n-1] = 1;
+    }
+}

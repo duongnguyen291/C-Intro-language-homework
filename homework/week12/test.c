@@ -5,10 +5,12 @@
 void reset(int a[row_size][column_size]);
 
 int main(){
-
-    int a[row_size][column_size];
-
-    
+    int a = 10;
+    int *p = &a; // 'p' points to 'a`
+    int **pp = &p;
+    printf("\n%5d %5d",a,&a);
+    printf("\n%d",p);
+    printf("\n%d",pp);
 
     return 0;
 }
