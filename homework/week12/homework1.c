@@ -13,7 +13,6 @@ int check_row(int a[row_size][column_size],int row);
 int check_column(int a[row_size][column_size],int column);
 void turn_position(int a[row_size][column_size],int consume[row_size][column_size]);
 int bill(int consume[row_size][column_size]);
-
 int main(){
     //intialization variables 
     int a[row_size][column_size];
@@ -31,7 +30,6 @@ int main(){
             consume[i][j] = 0;
         }
     }
-
     //Write menu
     do{
         printf("\nWelcome to the light control of LAB");
@@ -44,7 +42,6 @@ int main(){
         printf("\n6. Quit");
         printf("\nYour choice is : ");
         get_by_range(&home,0,6);
-
     switch (home)
     {
     case 0:
@@ -88,8 +85,6 @@ int main(){
     }while(1);
     return 0;
 }
-
-
 void lietke(int a[row_size][column_size]){
     for(int i = 0;i < row_size;i++){
         for(int j = 0;j < column_size ;j++){
@@ -98,7 +93,6 @@ void lietke(int a[row_size][column_size]){
         printf("\n");
     }
 }
-
 void reset(int a[row_size][column_size],int consume[row_size][column_size]){   
     for(int i = 0;i < row_size;i++){
         for(int j = 0;j < column_size ;j++){
@@ -164,10 +158,7 @@ void turn_row(int a[row_size][column_size],int consume[row_size][column_size]){
             
         } 
     }   
-    
-
 }
-
 void turn_column(int a[row_size][column_size],int consume[row_size][column_size]){
     int n,check;
     printf("\nChoose the number of column: ");
@@ -225,8 +216,6 @@ int check_column(int a[row_size][column_size],int column){
     }
     return check;
 }
-
-
 void turn_position(int a[row_size][column_size],int consume[row_size][column_size]){
     int r,c;
     int check;
