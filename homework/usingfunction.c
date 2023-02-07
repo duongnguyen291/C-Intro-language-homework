@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #define row_size 3
 #define column_size 5
+
 //lấy giá trị int theo khoảng từ a đến b cho đến khi nào được thì thôi
 void get_by_range(int *n, int a, int b){
     do{
@@ -13,6 +14,7 @@ void get_by_range(int *n, int a, int b){
             }
         }while((*n<a)||(*n>b));
 }
+
 //lấy giá trị int cho đến khi nguyên dương
 void getpositive(int *n){
     do{
@@ -23,6 +25,7 @@ void getpositive(int *n){
         }
     }while(*n<0);
 }
+
 //tìm phần tử max trong mảng 
 int find_max(int a[],int size ){
     int max = a[0], n = 0 ;
@@ -34,6 +37,7 @@ int find_max(int a[],int size ){
     }
     return n;
 }
+
 //tìm phần tử min trong mảng
 int find_min(int a[], int size){
     int min = a[0], n = 0 ;
@@ -45,6 +49,7 @@ int find_min(int a[], int size){
     }
     return n;
 }
+
 //tổng phần tử trong mảng 2 chiều
 int bill_two(int consume[row_size][column_size]){
 	int bill = 0;
@@ -55,6 +60,7 @@ int bill_two(int consume[row_size][column_size]){
 	}
 	return bill;
 }
+
 //tổng phần tử trong mảng 1 chiều
 int bill_one(int consume[],int size){
 	int bill = 0;
@@ -63,6 +69,7 @@ int bill_one(int consume[],int size){
 	}
 	return bill;
 }
+
 //liệt kê tất cả phần tử trong mảng 1 chiều
 void lietke(int status[],int a){
     for(int i = 0; i < a; i++){
@@ -76,7 +83,20 @@ void isLeapYear(unsigned int n){
     }
     else {printf("\nThis is not leap year!");}
 }
-//
+
+//Nhập phần tử của mảng 
+void enter_array_value(int a[],int n){
+    for(int i = 0;i <n ;i++){
+        printf("\nEnter a[%d]: ", i);
+        scanf("%d", &a[i]);
+    }
+}
+//copy mảng b bằng với mảng a
+void copy_array(int a[],int b[],int size1){
+    for(int i = 0; i < size1;i++){
+        b[i] = a[i];
+    }
+}
 int main(){
     printf("Hello");
     return 0;
