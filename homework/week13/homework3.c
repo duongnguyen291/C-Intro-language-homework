@@ -88,7 +88,7 @@ void player_bonus(struct player *win, struct player *lose){
         printf("\n\t3.The Speed: %d",lose->speed);
     }
 }
-//two player in one round 
+//two player in one round ; 
 int player_round(char name_1[namelen],int hp_1, int damage_1, int speed_1, char name_2[namelen],int hp_2, int damage_2,int speed_2){
     int result = 3;
     printf("\nREADY? ....THE GAME START !!!");
