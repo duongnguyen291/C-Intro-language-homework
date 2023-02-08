@@ -85,6 +85,7 @@ int main(){
     }while(1);
     return 0;
 }
+
 void lietke(int a[row_size][column_size]){
     for(int i = 0;i < row_size;i++){
         for(int j = 0;j < column_size ;j++){

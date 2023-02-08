@@ -11,7 +11,7 @@ int main(){
     strcpy(country_list[0].name, "viet nam");
     strcpy(country_list[1].name,"trung quoc");
     strcpy(country_list[2].name,"hoa ki vl");
-    
+    char country[5][20] = {"Vietnam","Trung Quoc","Hoa ki","Nga","Uc"};
     int point[3] = {1,2,3};
     int vl[3] = {1,2,3};
     printf("\nCountry\t\tPoint\tVl");
