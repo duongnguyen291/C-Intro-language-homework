@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 void trimRight(char a[]){
     int i = strlen(a) - 1;
 while( i > 0 && a[i] == ' '){
@@ -9,32 +10,42 @@ while( i > 0 && a[i] == ' '){
     char b[] ="."; 
     strcat(a,b);
 }
-char *trim_Left(char *source) {
-    while (*source == ' ')
-        *source++;
-    
-    return source;
-}
-void trimMiddle(char a[]){
-    
-
-
-
-}
-
-char *removeWhitespace(const char *str) {
-    int i = 0, j = 0;
-    int len = strlen(str);
-    char *result = (char *)malloc((len + 1) * sizeof(char));
-
-    while (str[i]) {
-        while (str[i] == ' ' && str[i + 1] == ' ') i++;
-        result[j++] = str[i++];
+void trimLeft(char a[]){
+    int i = 0;
+    int count = 0;
+    while(a[i] ==' ' && i < strlen(a)){
+        count++;
     }
-
-    result[j] = '\0';
-    return result;
+    a +=count;
 }
+// char *trimMiddle(char a[]){
+//     int i = 0;
+//     char p[1000];
+//     for(int j = 0; i < strlen(a);j++){
+//         if((a[j] = ' ') && (a[j+1] = ' ')){
+//             continue;
+//         }
+//         p[i]=a[j];
+//         i++;
+//     }
+//     p[i]='\0';
+//     return p;
+// }
+void removeWhitespaces(char* str)
+{
+    int i = 0, j = 0;
+
+    while (str[i])
+    {
+        while (isspace(str[i]) && isspace(str[i + 1]))
+        {
+            i++;
+        }
+        str[j++] = str[i++];
+    }
+    str[j] = '\0';
+}
+
 int main(){
     char a[1000];
     char vl[1000];
@@ -58,15 +69,11 @@ int main(){
             printf("\n:%s",a);
             break;
         case 4:
-            trimMiddle(a);
+            removeWhitespaces(a);
             printf("\n:%s",a);
             break;
         case 5:
             exit(0);
-            break;
-        case 6:
-            removeWhitespace(a);
-            printf("\n:%s",a);
             break;
         default:
             printf("\nYour choice is incorrect format");
