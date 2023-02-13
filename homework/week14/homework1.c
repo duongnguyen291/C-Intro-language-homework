@@ -18,19 +18,27 @@ void trimLeft(char a[]){
     }
     a +=count;
 }
-// char *trimMiddle(char a[]){
-//     int i = 0;
-//     char p[1000];
-//     for(int j = 0; i < strlen(a);j++){
-//         if((a[j] = ' ') && (a[j+1] = ' ')){
-//             continue;
-//         }
-//         p[i]=a[j];
-//         i++;
-//     }
-//     p[i]='\0';
-//     return p;
-// }
+void trimMiddle(char* str)
+{
+    
+    int i = 0, j = 0;
+
+    while(isspace(str[i])){
+        i++;            
+        if( isspace(str[i+1]) != 0){
+            break;
+        }
+    }
+    while (str[i])
+    {
+        while (isspace(str[i]) && isspace(str[i + 1]))
+        {
+            i++;
+        }
+        str[j++] = str[i++];
+    }
+    str[j] = '\0';
+}
 void removeWhitespaces(char* str)
 {
     int i = 0, j = 0;
@@ -69,7 +77,7 @@ int main(){
             printf("\n:%s",a);
             break;
         case 4:
-            removeWhitespaces(a);
+            trimMiddle(a);
             printf("\n:%s",a);
             break;
         case 5:

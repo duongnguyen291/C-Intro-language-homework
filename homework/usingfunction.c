@@ -26,7 +26,7 @@ void getpositive(int *n){
     }while(*n<0);
 }
 
-//tìm phần tử max trong mảng 
+//tìm phần tử max trong mảng (ĐƯA VỀ vị trí TỪ 0 ĐẤY )
 int find_max(int a[],int size ){
     int max = a[0], n = 0 ;
     for(int i = 1; i <size;i++){

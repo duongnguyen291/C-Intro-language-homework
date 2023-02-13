@@ -15,7 +15,7 @@ int main(){
     //intialization variables 
     int a[row_size][column_size];
     int home;
-    int n;
+    int row,column;
     //reset all the elements of array
     for(int i = 0;i < row_size;i++){
         for(int j = 0;j < column_size ;j++){
@@ -55,12 +55,14 @@ int main(){
             }
         break;
     case 1:
-        turn_row(a);
-        //lietke(a[row_size][column_size]);       
+        printf("\nChoose the number of row: ");
+        get_by_range(&row,1,5);
+        check_column(a,row);
+
+   
         break;
     case 2:
-        turn_column(a);
-        //lietke(a[row_size][column_size]);
+
         break;
     case 3:
         break;
