@@ -10,7 +10,7 @@ int main(){
   int home;
   //lenh
   do{
-    printf("\nMenu");
+    printf("\nMenu\n\tYour choice is:    ");
     scanf("%d",&home);
     switch(home){
     case 1:;
