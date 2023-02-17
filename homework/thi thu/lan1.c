@@ -8,18 +8,20 @@ typedef struct bkhoa{
   char courseName[30];
   char room[10];
   int day;
-  char slots[10];
+  int startSlots;
+  int endSlots;
 }bkhoa;
 void get_by_range(int *n, int a, int b);
 void getpositive(int *n);
 void bo_sung_lop_hoc(struct bkhoa *p,int new, int old){
-  for(int i = old ; i < new;i++){
+    for(int i = old ; i < new;i++){
     printf("Nhap mon hoc thu %d",i+1);
-    do{
+    // do{
   printf("\nNhap Class ID: ");
-  scanf("%d",&p[i].classID);
-  if(p[i].classID < 1){printf("\nVui long nhap so lon hon 0");}
-  }while(p[i].classID < 1);
+  getpositive(&p[i].classID);
+  // scanf("%d",&p[i].classID);
+  // if(p[i].classID < 1){printf("\nVui long nhap so lon hon 0");}
+  // }while(p[i].classID < 1);
   printf("\nNhap Course Name(ten hoc phan): ");
   scanf(" %[^\n]%*c", p[i].courseName);
   printf("\nNhap Room(phong hoc: vi du: D3-301): ");
@@ -31,23 +33,27 @@ void bo_sung_lop_hoc(struct bkhoa *p,int new, int old){
   if(p[i].day < 2||p[i].day>7){
     printf("\nNgay hoc phai be hon 2 va lon hon 7");}
   }while(p[i].day < 2|| p[i].day>7);
-  printf("\nNhap tiet hoc bat dau va ket thuc:");
-  scanf(" %[^\n]",p[i].slots);
-  //for(int j = 0 ;j < strlen(p[i].slots;j++){
-  //p[i][j].slots  } 
+  do{
+    
+  printf("\nNhap tiet hoc bat dau va ket thuc: ");
+  scanf("%d%*c%d",&p[i].startSlots,&p[i].endSlots);
+  if(((p[i].startSlots < 1 )||(p[i].endSlots) >12 ) || (p[i].startSlots >= p[i].endSlots)){
+    printf("\nEnter again!");
+  }
+  }while(((p[i].startSlots < 1 )||(p[i].endSlots) >12 ) || (p[i].startSlots >= p[i].endSlots));
   }
 }
 
 void in_thong_tin_lop(struct bkhoa *p, int n){
   printf("%-10s%-30s%-15s%-5s%-10s","Ma lop", "Ten mon hoc", "Ten phong", "Thu", "Tiet hoc");
   for(int i = 0 ; i < n;i++){
-    printf("\n%-10d%-30s%-15s%-5d%-10s",p[i].classID,p[i].courseName,p[i].room,p[i].day,p[i].slots);
+    printf("\n%-10d%-30s%-15s%-5d%d-%-8d",p[i].classID,p[i].courseName,p[i].room,p[i].day,p[i].startSlots,p[i].endSlots);
   }
 }
 void tim_kiem_phong(struct bkhoa *p,int n, char *class){
   for(int i = 0; i < n;i++){
     if(strcmp(p[i].room,class) == 0){
-      printf("\n%-10d%-30s%-15s%-5d%-10s",p[i].classID,p[i].courseName,p[i].room,p[i].day,p[i].slots); 
+      printf("\n%-10d%-30s%-15s%-5d%-d-%8d",p[i].classID,p[i].courseName,p[i].room,p[i].day,p[i].startSlots,p[i].endSlots); 
   }
   }
 }
