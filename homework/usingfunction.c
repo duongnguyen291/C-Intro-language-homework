@@ -221,7 +221,41 @@ int partition (int arr[], int low, int high)
     swap(&arr[i + 1], &arr[high]);
     return (i + 1);
 }
-
+// chuan hoa ten 
+void removeWhitespace(char str[]){
+    //xóa khoảng trắng
+    int i = 0, j = 0;
+    while (str[i])
+    {
+        while (isspace(str[i]) && isspace(str[i + 1]))
+        {
+            i++;
+        }
+        str[j++] = str[i++];
+    }
+    str[j] = '\0';
+}
+//lower all the characters
+char *lower(char str[]){
+    for(int i = 0; i < strlen(str);i++){
+        str[i] = tolower(str[i]);
+    }
+    return str;
+}
+char *upper_first_character(char str[]){
+    str[0] = toupper(str[0]);
+    for(int i = 1; i <strlen(str); i++){
+        if(isspace(str[i]) && str[i+1] != ' '){
+            str[i+1] = toupper(str[i+1]);
+        }
+    }
+    return str;
+}
+void chuan_hoa_ten(char a[]){
+    removeWhitespace(a);
+    lower(a);
+    upper_first_character(a);
+}
 
 
 

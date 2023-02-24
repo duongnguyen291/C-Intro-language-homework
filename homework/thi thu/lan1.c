@@ -83,7 +83,11 @@ void sap_xep(struct bkhoa *p,int n){
   }
 }
 void trung_phong(struct bkhoa *p,int n){
+  
+  for(int i = 0;i < n ;i++){
 
+
+  }
 
 }
 //MAIN
