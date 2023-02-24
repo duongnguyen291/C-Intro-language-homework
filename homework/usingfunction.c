@@ -258,7 +258,6 @@ void chuan_hoa_ten(char a[]){
 }
 
 
-
 int main(){
     printf("Hello");
     return 0;

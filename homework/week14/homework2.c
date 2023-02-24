@@ -44,6 +44,7 @@ void chuan_hoa_ten(char a[]){
 
 int main(){
     student a,b,c,d,e;
+    student p[10];
     int home;
     do{
         printf("\nMENU\n\t1.Enter the name of 5 student\n\t2.Chuan hoa ten\n\t3.Quit\n");
