@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <math.h>
 void get_by_range(int *n, int a, int b);
 void getpositive(int *n);
 //MAIN
@@ -11,7 +12,7 @@ int main(){
   //lenh
   do{
     printf("\nMenu\n\tYour choice is:    ");
-    scanf("%d",&home);
+    get_by_range(&home,1,6);
     switch(home){
     case 1:;
 

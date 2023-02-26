@@ -4,10 +4,8 @@
 #include <stdlib.h>
 
 int main(){
-char str[100];
-
-printf("\nenter: ");
-scanf(" %[^\n]%*c", str);
-printf("\nSo tu: %d",strlen(str));
+char str[4] = "Vanh";
+char vl[4] = "Vanh";
+printf("\n%d", strcmp(str,vl));
 
 }

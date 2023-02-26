@@ -1,44 +1,63 @@
-tinhthanh v[1000];
-int m=0;
-int findpos(char diachi[]){
-	for(int i=0;i<m;i++){
-		if(strcamp(v[i].ten,diachi)==0)
-		return 1;
-	}
-	return -1;
-}
-int cmp(const void*a; const void*b){
-	tinhthanh*x=(tinhthanh*)a;
-	tinhthanh*y=(tinhthanh*)b;
-	return strcmp(x->ten,y->ten);
-}
-int main(){
-	int n;
-    scanf("%d",&n);
-	sinhvien a[n];
-	for(int i=0;i<n;i++){
-		getchar();
-		gets(a[i].ten);
-		gets(a[i].ngaysinh);
-		gets(a[i].diachi);
-		scanf("%lf", &a[i].gpa);
-	    int pos=findpos(a[i].diachi);
-    if(pos == -1){
-    	sctrcmp(v[m].ten,a[i].diachi);
-    	v[m].sl=1;
-    	++m;
-	}
-	else  v[pos].sl++;
-}
-    
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
-	for(int i=0;i<n;i++){
-    	if(v[i].sl > max_free) max_free = v[i].sl;
-}
-qsort(v,m,sizeof(tinhthanh),cmp);
-for(int i=0;i<n;i++){
-	if(v[i].sl==max_free){
-		printf("%s\n",v[i].ten);
-	}
-}
+//MAIN
+int main(){
+  //khai bao bien
+  int home;
+  char sv[5][50];
+  char search[50];
+  int max;
+  //lenh
+  do{
+    printf("\nMenu\n\t1.Nhap danh sach sinh vien\n\t2.Hien thi danh sach\n\t3.Tim kiem\n\t4.Tim kiem theo so ky tu trong ten\n\t5.Thoat\n\t->     ");
+    scanf("%d",&home);
+    switch(home){
+    case 1:;
+		for(int i =0;i < 5;i++){
+			printf("\nNhap ten cua sinh vien thu %d: ",i+1);
+			scanf(" %[^\n]%*c",sv[i]);
+		}
+       break;
+    case 2:
+		printf("\n|%-5s|%-30s|","STT","Ho va ten");
+		for(int i = 0 ;i < 5;i++){
+			printf("\n|%-5d|%-30s|",i+1,sv[i]);
+		}
+      break;
+    case 3:
+    printf("\nNhap chuoi tim kiem: ");
+		scanf(" %[^\n]%*c",search);
+    search[strlen(search)+1]= '\0';
+
+    // Tìm kiếm sinh viên có tên chứa chuỗi tìm kiếm
+    printf("Cac sinh vien co ten chua chuoi '%s':\n", search);
+    for (int i = 0; i < 5; i++) {
+        if (strstr(sv[i], search) != NULL) {
+            printf("\n- %s", sv[i]);
+        }
+    }
+      break;
+    case 4:
+		printf("\nNhap so ki tu toi da: ");
+		scanf("%d",&max);
+		for(int i = 0;i < 5;i++){
+			if(strlen(sv[i]) <= max ){
+				printf("\n- %s",sv[i]);
+			}
+		}
+      break;
+    case 5:
+     //thoát chương trình
+      exit(0);
+      break;
+    default:
+      printf("\nBan chon sai roi!");
+      break;
+    } 
+  }while(1);
+
+  return 0;
 }
