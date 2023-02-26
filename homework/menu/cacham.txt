@@ -1,0 +1,19 @@
+<ctype.h>
+isalnum(): kiểm tra xem ký tự có phải là chữ cái hoặc số hay không.
+isalpha(): kiểm tra xem ký tự có phải là chữ cái hay không.
+isdigit(): kiểm tra xem ký tự có phải là số hay không.
+islower(): kiểm tra xem ký tự có phải là chữ cái thường hay không.
+isupper(): kiểm tra xem ký tự có phải là chữ cái in hoa hay không.
+isspace(): kiểm tra xem ký tự có phải là khoảng trắng (space, tab, newline, v.v.) hay không.
+tolower(): chuyển đổi ký tự thành chữ thường.
+toupper(): chuyển đổi ký tự thành chữ in hoa.
+<string.h>
+strlen(): trả về độ dài của chuỗi.
+strcpy(): sao chép nội dung của chuỗi nguồn vào chuỗi đích.
+strncpy(): sao chép nội dung của chuỗi nguồn vào chuỗi đích với độ dài tối đa chỉ định.
+strcat(): nối chuỗi nguồn vào cuối chuỗi đích.
+strncat(): nối tối đa n ký tự của chuỗi nguồn vào cuối chuỗi đích.
+strcmp(): so sánh hai chuỗi và trả về một giá trị nguyên tương ứng với kết quả so sánh.
+strncmp(): so sánh tối đa n ký tự của hai chuỗi và trả về một giá trị nguyên tương ứng với kết quả so sánh.
+strchr(): tìm kiếm ký tự đầu tiên của một chuỗi con trong chuỗi và trả về con trỏ đến vị trí đó.
+strstr(): tìm kiếm chuỗi con đầu tiên trong chuỗi và trả về con trỏ đến vị trí đó.
